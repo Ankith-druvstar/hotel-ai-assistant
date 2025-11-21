@@ -5,18 +5,34 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+import Tooltip from "@mui/material/Tooltip";
 import HotelIcon from "@mui/icons-material/Hotel";
 
 export default function Login({ onLogin }) {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
+  const [roomError, setRoomError] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!name || !room)
-      return alert("Enter name and room key card number");
+    if (!name || !room) return;
+    if (roomError) return;
     onLogin({ name, room });
   }
+
+  function handleRoomChange(e) {
+    const value = e.target.value;
+    setRoom(value);
+
+    // allow only numbers & not more than 1200
+    if (!/^[0-9]*$/.test(value) || Number(value) > 1200) {
+      setRoomError(true);
+    } else {
+      setRoomError(false);
+    }
+  }
+
+  const disabled = !name || !room || roomError;
 
   return (
     <Paper
@@ -48,14 +64,22 @@ export default function Login({ onLogin }) {
           <TextField
             label="Room key card number"
             value={room}
-            onChange={(e) => setRoom(e.target.value)}
+            onChange={handleRoomChange}
             fullWidth
             margin="normal"
+            error={roomError}
+            helperText={
+              roomError
+                ? "Invalid room key — only numbers allowed and must be between 1 and 1200"
+                : ""
+            }
             sx={{
               transition: "0.25s",
               "& .MuiOutlinedInput-root.Mui-focused fieldset": {
-                borderColor: "#1c4a91",
-                boxShadow: "0 0 6px #1c4a9166",
+                borderColor: roomError ? "red" : "#1c4a91",
+                boxShadow: roomError
+                  ? "0 0 6px #ff000066"
+                  : "0 0 6px #1c4a9166",
               },
             }}
           />
@@ -75,32 +99,42 @@ export default function Login({ onLogin }) {
             }}
           />
 
-          <Button
-            type="submit"
-            variant="contained"
-            size="large"
-            fullWidth
-            sx={{
-              mt: 3,
-              py: 1.3,
-              bgcolor: "#1c4a91",
-              fontSize: "1.05rem",
-              fontWeight: 600,
-              borderRadius: 2,
-              transition: "0.28s",
-              "&:hover": {
-                transform: "translateY(-2px)",
-                bgcolor: "#163a76",
-                boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-              },
-            }}
+          <Tooltip
+            title={disabled ? "Please enter details" : ""}
+            placement="top"
           >
-            Enter Hotel
-          </Button>
+            <span>
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                fullWidth
+                disabled={disabled}
+                sx={{
+                  mt: 3,
+                  py: 1.3,
+                  bgcolor: "#1c4a91",
+                  fontSize: "1.05rem",
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  transition: "0.28s",
+                  cursor: disabled ? "not-allowed" : "pointer",
+                  "&:hover": disabled
+                    ? { bgcolor: "#1c4a91" }
+                    : {
+                        transform: "translateY(-2px)",
+                        bgcolor: "#163a76",
+                        boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
+                      },
+                }}
+              >
+                Enter Hotel
+              </Button>
+            </span>
+          </Tooltip>
         </Box>
       </Box>
 
-      {/* login fade animation */}
       <style>
         {`
         @keyframes fadeIn {
