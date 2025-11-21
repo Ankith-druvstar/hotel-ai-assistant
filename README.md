@@ -1,123 +1,139 @@
-# 🏨 Hotel AI Assistant — React + OpenAI Chatbot
+🏨 Hotel AI Assistant — React + OpenAI Chatbot
 
-A smart AI-powered hotel companion that enhances guest experience with instant assistance, room service requests, reminders, hotel information, and more — inside a polished MUI interface.
+A smart AI-powered hotel companion that enhances guest experience with instant assistance, room service requests, reminders, hotel information, and more — beautifully designed using MUI.
 
----
+🚀 Features
 
-## 🚀 Features
+Guest login with room-based session memory
 
-- Personalized guest login (room-based session memory)
-- Animated welcome slideshow
-- Hotel information & amenities shown using card UI
-- Guest reviews inside modern hover popups
-- Fully interactive AI chatbot
-- Quick actions: room service & reminders
-- Persistent history using LocalStorage
-- Fully responsive layout
+Animated welcome slideshow
 
----
+Hotel info & amenities displayed in modern card UI
 
-## 🛠️ Tech Stack
+Hover-based guest review previews
 
-| Technology | Usage |
-|------------|-------|
-| React.js | Frontend UI |
-| Material-UI (MUI) | Modern components & layout |
-| React Router | Navigation |
-| OpenAI Chat API | AI responses |
-| LocalStorage | Session and reminders persistence |
+Powerful AI chatbot (OpenAI)
 
----
+Quick actions: reminders & room service
 
-## 📂 Project Structure
+Persistent chat history & reminders using LocalStorage
 
-src/
-├─ components/
-│ ├─ Login.js
-│ ├─ Welcome.js
-│ ├─ Chat.js
-├─ services/
-│ ├─ ai.js ← OpenAI integration (already configured)
-├─ App.js
-├─ index.js
+Fully responsive and mobile-friendly design
+
+🛠️ Tech Stack
+Technology	Purpose
+React.js	Frontend interface
+Material-UI (MUI)	UI components and styling
+React Router	Routing & navigation
+Express.js	Backend API
+OpenAI Chat API	AI responses
+LocalStorage	Persistent reminders & chat memory
 
 
----
+📂 Project Structure
+project/
+├─ src/
+│  ├─ components/
+│  │  ├─ Login.js
+│  │  ├─ Welcome.js
+│  │  ├─ Chat.js
+│  ├─ services/
+│  │  ├─ ai.js   ← OpenAI integration
+│  ├─ App.js
+│  ├─ index.js
+│
+├─ server/       ← Node/Express backend
+│  ├─ index.js
+│  ├─ package.json
+│
+├─ package.json  ← React dependencies
 
-## ▶️ Run the Project (Easy Steps)
-
-### 1️⃣ Install dependencies
+▶️ How to Run the Project
+1️⃣ Start the backend (server folder)
+cd server
 npm install
-
-
-### 2️⃣ Start the development server
 npm start
 
 
-The application will open automatically on:
+Backend runs at:
+
+http://localhost:5000
+
+2️⃣ Start the React app (root folder)
+
+Open a second terminal in the root project folder (NOT inside server):
+
+npm install
+npm start
+
+
+Frontend runs at:
+
 http://localhost:3000
 
+🔑 OpenAI API Setup
 
----
+❗ You do not need to add your own API key.
+The project already contains a configured OpenAI connection located at:
 
-## 🔑 OpenAI API Key
-
-You **do not** need to register or add your own API key.  
-The project already includes a configured OpenAI integration inside:
-
-/src/services/ai.js
+src/services/ai.js
 
 
-So it will **work immediately after running** the project — no extra setup required.
+It will work immediately after running the project.
 
----
+💬 AI Chatbot Commands
 
-## 💬 Chatbot Capabilities
+Try asking the assistant:
 
-You can ask the assistant things like:
+Message	Result
+What are breakfast timings?	Provides hotel info
+Call room service	Triggers a service request
+Set reminder to visit spa at 7pm	Saves reminder
+View reminders	Shows saved reminders
+Suggest tourist places nearby	AI recommendations
+🧩 Customization Guide
+File	Customizable Section
+Welcome.js	Hotel banner, amenities & reviews
+Chat.js	Chat UI & quick action buttons
+ai.js	AI personality, temperature and model settings
+App.js	Navigation flow
+🌍 Deployment
 
-| Example Message | Result |
-|----------------|--------|
-| “What are today’s breakfast hours?” | AI responds with hotel info |
-| “Call room service” | Initiates simulated request |
-| “Set reminder to visit the spa at 6 PM” | Saves reminder |
-| “View reminders” | Displays all saved reminders |
-| “Suggest activities nearby” | AI suggests locations |
+To build the React app for production:
 
----
-
-## 🧩 Customization Reference
-
-| Component | Editable content |
-|----------|------------------|
-| `Welcome.js` | Hotel details, amenities & reviews |
-| `Chat.js` | Chat UI, quick actions & styling |
-| `ai.js` | AI response style / temperature |
-| `index.css` or theme | Colors & theme |
-
----
-
-## 🌍 Deployment (Optional)
-
-To build for production:
 npm run build
 
 
-Recommended hosting:
-- Vercel
-- Netlify
-- Surge
-- GitHub Pages
+Hosting recommendations:
 
----
+Vercel
 
-## 💙 Credits
+Netlify
 
-Built using:
-- React
-- Material-UI
-- OpenAI Chat API
+Surge
 
-Designed to demonstrate how AI can transform hospitality and improve guest experience.
+GitHub Pages
 
----
+Backend deployment (optional):
+
+Render
+
+Railway
+
+Heroku
+
+AWS / VPS
+
+💙 Credits
+
+Built with:
+
+React.js
+
+Material-UI
+
+Express.js
+
+OpenAI Chat API
+
+Designed to show how AI can improve hotel hospitality and elevate guest experience.
