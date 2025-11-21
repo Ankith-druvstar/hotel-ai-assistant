@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# 🏨 Hotel AI Assistant — React + OpenAI Chatbot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A smart AI-powered hotel companion that enhances guest experience with instant assistance, room service requests, reminders, hotel information, and more — inside a polished MUI interface.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- Personalized guest login (room-based session memory)
+- Animated welcome slideshow
+- Hotel information & amenities shown using card UI
+- Guest reviews inside modern hover popups
+- Fully interactive AI chatbot
+- Quick actions: room service & reminders
+- Persistent history using LocalStorage
+- Fully responsive layout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Technology | Usage |
+|------------|-------|
+| React.js | Frontend UI |
+| Material-UI (MUI) | Modern components & layout |
+| React Router | Navigation |
+| OpenAI Chat API | AI responses |
+| LocalStorage | Session and reminders persistence |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+src/
+├─ components/
+│ ├─ Login.js
+│ ├─ Welcome.js
+│ ├─ Chat.js
+├─ services/
+│ ├─ ai.js ← OpenAI integration (already configured)
+├─ App.js
+├─ index.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ▶️ Run the Project (Easy Steps)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1️⃣ Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2️⃣ Start the development server
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+The application will open automatically on:
+http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🔑 OpenAI API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You **do not** need to register or add your own API key.  
+The project already includes a configured OpenAI integration inside:
 
-### Analyzing the Bundle Size
+/src/services/ai.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+So it will **work immediately after running** the project — no extra setup required.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 💬 Chatbot Capabilities
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can ask the assistant things like:
 
-### Deployment
+| Example Message | Result |
+|----------------|--------|
+| “What are today’s breakfast hours?” | AI responds with hotel info |
+| “Call room service” | Initiates simulated request |
+| “Set reminder to visit the spa at 6 PM” | Saves reminder |
+| “View reminders” | Displays all saved reminders |
+| “Suggest activities nearby” | AI suggests locations |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🧩 Customization Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Component | Editable content |
+|----------|------------------|
+| `Welcome.js` | Hotel details, amenities & reviews |
+| `Chat.js` | Chat UI, quick actions & styling |
+| `ai.js` | AI response style / temperature |
+| `index.css` or theme | Colors & theme |
+
+---
+
+## 🌍 Deployment (Optional)
+
+To build for production:
+npm run build
+
+
+Recommended hosting:
+- Vercel
+- Netlify
+- Surge
+- GitHub Pages
+
+---
+
+## 💙 Credits
+
+Built using:
+- React
+- Material-UI
+- OpenAI Chat API
+
+Designed to demonstrate how AI can transform hospitality and improve guest experience.
+
+---
